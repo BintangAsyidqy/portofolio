@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
     background: #0a0a0a;
     color: #f5f5f5;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 a {
@@ -32,6 +34,10 @@ button,
 input,
 textarea {
     font: inherit;
+}
+
+img {
+    max-width: 100%;
 }
 
 
@@ -1129,6 +1135,18 @@ textarea {
         padding: 80px 0;
     }
 
+    .navbar {
+        width: 90%;
+    }
+
+    .logo {
+        max-width: calc(100% - 55px);
+        overflow: hidden;
+        font-size: 1rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
     .menu-toggle {
         display: block;
     }
@@ -1172,7 +1190,25 @@ textarea {
     }
 
     .hero h1 {
-        font-size: 3.3rem;
+        font-size: clamp(2.7rem, 14vw, 3.3rem);
+        letter-spacing: -2px;
+    }
+
+    .hero h2 {
+        font-size: 1.35rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .profile-card {
+        width: min(72vw, 260px);
+        height: min(88vw, 320px);
     }
 
     .hero-buttons {
@@ -1190,8 +1226,35 @@ textarea {
         padding: 25px;
     }
 
+    .cv-modal {
+        padding: 20px 12px;
+    }
+
+    .cv-modal-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .cv-modal-header h2 {
+        font-size: 1.4rem;
+    }
+
     .btn {
         width: 100%;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-content,
+    .certificate-card,
+    .skill-card {
+        padding: 22px;
+    }
+
+    .certificate-image {
+        height: 180px;
     }
 
     .skills-grid,
@@ -1202,6 +1265,14 @@ textarea {
 
     .about-info {
         grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        gap: 45px;
+    }
+
+    .contact-text > p {
+        font-size: 0.95rem;
     }
 
     .footer-content {
